@@ -1,12 +1,16 @@
 <template>
-  <p>Template</p>
+  <Square />
+  <Square />
+  <Square />
 </template>
 
 <script>
 
+import Square from './components/Square.vue'
 
 export default {
   name: 'App',
+  components: {Square}
   
 }
 </script>
