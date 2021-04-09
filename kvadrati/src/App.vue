@@ -1,7 +1,11 @@
 <template>
-  <Square />
-  <Square />
-  <Square />
+<div id="horizontal">
+  
+    <Square />
+    <Square />
+    <Square />
+ 
+</div>
 </template>
 
 <script>
@@ -19,12 +23,21 @@ export default {
 body{
   background: yellow;
 }
+#horizontal{
+  display:flex;
+  justify-content: space-around;
+  margin-top:10%;
+  margin-bottom:10%;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+ 
+ 
+ 
+  
 }
 </style>
