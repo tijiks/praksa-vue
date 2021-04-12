@@ -1,9 +1,9 @@
 <template>
 <div id="horizontal">
   
-    <Square />
-    <Square />
-    <Square />
+    <Square @click="ispis='1'"></Square>
+    <Square  :text="ispis" @click="ispis='2'"><p>{{ispis}}</p></Square>
+    <Square @click="ispis='3'"></Square>
  
 </div>
 </template>
@@ -14,7 +14,17 @@ import Square from './components/Square.vue'
 
 export default {
   name: 'App',
-  components: {Square}
+  components: {Square},
+  data(){
+    return{
+      ispis:""
+     
+    }
+
+  },
+  
+ 
+
   
 }
 </script>
