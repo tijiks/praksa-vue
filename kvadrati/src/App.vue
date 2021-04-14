@@ -1,9 +1,11 @@
 <template>
 <div id="horizontal">
   
-    <Square @click="ispis='1'"></Square>
-    <Square  :text="ispis" @click="ispis='2'"><p>{{ispis}}</p></Square>
-    <Square @click="ispis='3'"></Square>
+    <Square v-for="square in squares" :key="square.id" @squareClicked="squareClicked" 
+    :id="square.id" 
+    :text="square.text" 
+    :color="square.color"
+    ></Square>
  
 </div>
 </template>
@@ -17,15 +19,43 @@ export default {
   components: {Square},
   data(){
     return{
-      ispis:""
-     
+      squares:[
+        {
+          id: 1,
+          text:'',
+          color:'blue'
+
+        },
+        {
+          id: 2,
+          text:'',
+          color:'blue'
+
+        },
+        {
+          id: 3,
+          text:'',
+          color:'blue'
+
+        },
+      ]
+      
     }
-
   },
-  
- 
-
-  
+  methods:{
+        squareClicked: function(id){
+        this.squares[1].text=id;
+         this.squares.forEach(s => {
+          if(s.id===id){
+             s.color='red';
+          }
+          else{
+            s.color='blue';
+          }
+         })
+          
+        }
+      }
 }
 </script>
 
